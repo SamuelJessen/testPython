@@ -37,8 +37,8 @@ def read_temp():
 def read_adc():
     data1 = adcforce.read_adc(1,gain=2/3)
     data2 = adctemplight.read_adc(2,gain=2/3)
-    print("data læst fra adc 1:" + data1)
-    print("data læst fra adc 2:" + data2)
+    print("data læst fra adc 1:" + str(data1))
+    print("data læst fra adc 2:" + str(data2))
 
 while True:
     print("Temperatur: " + str(read_temp()))
