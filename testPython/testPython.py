@@ -33,23 +33,14 @@ def read_temp():
         temp_string = lines[1][equals_pos+2:]
         temp_c = float(temp_string) / 1000.0
         return temp_c
-	
+
+def read_adc():
+    data1 = adcforce.read_adc(1,gain=2/3)
+    data2 = adctemplight.read_adc(2,gain=2/3)
+    print("data læst fra adc 1:" + data1)
+    print("data læst fra adc 2:" + data2)
+
 while True:
-	print("Temperatur: " + str(read_temp()))	
-        data1 = adcforce.read_adc(1,gain=2/3)
-        data2 = adctemplight.read_adc(2,gain=2/3)
-        print("data læst fra adc 1:" + data1)
-        print("data læst fra adc 2:" + data2)
-	time.sleep(3)
-
-
-root.mainloop()
-
-
- 
- 
-
-
-
-
-
+    print("Temperatur: " + str(read_temp()))
+    read_adc()
+    time.sleep(3)
